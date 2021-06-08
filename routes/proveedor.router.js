@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 /* GET Obtener todos los proveedores */
-router.get('/', proveedor.getAllProveedores);
+router.get('/get', proveedor.getAllProveedores);
 
 /* POST Agregar un nuevo proveedor*/ 
 router.post('/new', proveedor.insertNewProovedor);

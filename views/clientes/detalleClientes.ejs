@@ -1,0 +1,174 @@
+<%- include('../layouts/header.ejs'); %>
+<div id="layoutSidenav_content">
+    <main>
+      <header class="page-header page-header-dark bg-primary pb-10">
+        <div class="container-xl px-4">
+          <div class="page-header-content pt-4">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-auto mt-4">
+                <h1 class="page-header-title">
+                  <div class="page-header-icon">
+                    <i data-feather="archive"></i>
+                  </div>
+                  Ormusa
+                </h1>
+                <div class="page-header-subtitle">
+                  Visualiza información general del cliente
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- main  page content-->
+      <div class="container-xl px-4 mt-n10">
+        <!-- Payment methods card-->
+        <div class="card card-header-actions mb-4">
+          <div class="card-header p-5">
+            Información general
+            <button class="btn btn-md btn-warning" type="button">Editar</button>
+          </div>
+          <div class="card-body px-0">
+            <!-- Payment method 1-->
+            <div class="d-flex align-items-center justify-content-between px-4">
+              <div class="d-flex align-items-center">
+                <i data-feather="archive"></i>
+                <div class="ms-4">
+                  <div class="text-xs text-muted">Dirección</div>
+                  <div class="small">Col. Escalón, 7a. Calle Pte Bis, casa No.5265, San Salvador</div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <!-- Payment method 2-->
+            <div class="d-flex align-items-center justify-content-between px-4">
+              <div class="d-flex align-items-center">
+                <i data-feather="file-text"></i>
+                <div class="ms-4">
+                  <div class="text-xs text-muted">Teléfono</div>
+                  <div class="small">7123 4567</div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <!-- Payment method 3-->
+            <div class="d-flex align-items-center justify-content-between px-4">
+              <div class="d-flex align-items-center">
+                <i data-feather="calendar"></i>
+                <div class="ms-4">
+                  <div class="text-xs text-muted">Correo</div>
+                  <div class="small">contacto@ormusa.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Materias y mas-->
+        <section id="alumnosSection">
+          <div class="card card-header-actions mb-4">
+            <div class="card-header p-5">
+              Contactos
+              <button class="btn btn-md btn-warning" type="button">
+                Agregar contacto
+              </button>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Carnet</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PL121272</td>
+                    <td>Juan José</td>
+                    <td>Peréz López</td>
+                    <td>
+                      <button class="btn btn-danger">
+                        <i class="me-2" data-feather="trash-2"></i>Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <%- include('../layouts/footer.ejs'); %>
