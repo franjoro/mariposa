@@ -13,7 +13,7 @@
                   <%= detalles.Nombre %>
                 </h1>
                 <div class="page-header-subtitle">
-                  Visualiza información general del cliente
+                  Visualiza información general del proveedor
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@
                         <td><%= element.Tel  %></td>
                         <td><%= element.Email  %></td>
                         <td><%= element.Cargo  %></td>
-                        <td><a class="btn btn-danger btnEliminarContacto" data-id="<%= element.id_contacto%>" >Eliminar</a></td>
+                        <td><a class="btn btn-danger btnDeleteContactProveedor" data-id="<%= element.id_contacto%>" >Eliminar</a></td>
                     </tr>
                   <% }) %>
                 </tbody>
@@ -109,13 +109,13 @@
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo contacto del cliente</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo contacto del proveedor</h5>
             <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form id="formClientesContacto">
+            <form id="formProveedorContacto">
               <div class="row">
                 <div class="col-md-6">
                   <label for="recipient-name" class="col-form-label">Nombre</label>
@@ -133,7 +133,7 @@
                   <label for="recipient-name" class="col-form-label">Cargo</label>
                   <input type="text" class="form-control"   name="Cargo"/>
                 </div>
-                <input type="hidden" name="id_cliente" value="<%= clienteId%>">
+                <input type="hidden" name="id_proveedor" value="<%= proveId%>">
               </div>
           </div>
           <div class="modal-footer">
@@ -148,4 +148,4 @@
       </div>
     </div>
   <%- include('../layouts/footer.ejs'); %>
-  <script src="/static/js/clientes.js"></script>
+  <script src="/static/js/proveedores.js"></script>

@@ -10,10 +10,10 @@
                   <div class="page-header-icon">
                     <i data-feather="archive"></i>
                   </div>
-                  Clientes
+                  Proveedores
                 </h1>
                 <div class="page-header-subtitle">
-                  Visualiza todos los clientes registrados
+                  Visualiza todos los proveedores registrados
                 </div>
               </div>
             </div>
@@ -26,7 +26,7 @@
           <div class="card-header p-5">
             Clientes
             <button class="btn btn-md btn-warning" type="button" data-toggle="modal" data-target="#modalCliente">
-              Agregar Cliente
+              Agregar proveedor
             </button>
           </div>
           <div class="card-body">
@@ -41,7 +41,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% clientes.forEach(element=> { %>
+                <% proveedores.forEach(element=> { %>
                   <tr>
                     <td>
                       <%= element.Nombre %>
@@ -56,8 +56,8 @@
                       <%= element.Email %>
                     </td>
                     <td>
-                      <a href="/clientes/detalle/<%=element.id_cliente%>" class="btn btn-primary">Contactos</a>
-                      <a class="btn btn-danger btnDeleteClientes" data-id="<%= element.id_cliente %>" >Eliminar</a>
+                      <a href="/proveedores/detalle/<%=element.id_proveedor%>" class="btn btn-primary">Contactos</a>
+                      <a class="btn btn-danger btnDeleteProveedores" data-id="<%= element.id_proveedor %>" >Eliminar</a>
                     </td>
                   </tr>
                   <% }) %>
@@ -75,13 +75,13 @@
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Agregar cliente</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo proveedor</h5>
             <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form id="formClientes">
+            <form id="formProveedores">
               <div class="row">
                 <div class="col-md-4">
                   <label for="recipient-name" class="col-form-label">Nombre</label>
@@ -114,4 +114,4 @@
     </div>
 
     <%- include('../layouts/footer.ejs'); %>
-  <script src="/static/js/clientes.js"></script>
+  <script src="/static/js/proveedores.js"></script>

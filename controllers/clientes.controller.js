@@ -1,13 +1,35 @@
 const clientes = {};
 
-
-
-
 const pool = require("../models/db");
 
 
 
 
+clientes.main = async (req ,res) => {
+    try {
+        const clientes = await pool.query("SELECT * FROM clientes");
+        res.render('./clientes/mainClientes', { clientes });
+    } catch (error) {
+        console.log(error);
+        res.json({ status: false, error }).status(400);
+    }
+  }
+
+clientes.detalleCliente = async (req ,res) => {
+    const {clienteId} = req.params;
+    try {
+        let contactos =  pool.query("SELECT * FROM contacto_cliente WHERE id_cliente = ? " , [clienteId]);
+        let detalles =   pool.query("SELECT * FROM clientes WHERE id_cliente = ? " , [clienteId]);
+        const query = await Promise.all([contactos, detalles]);
+        contactos = query[0];
+        detalles = query[1][0];
+        res.render('./clientes/detalleClientes', { contactos, detalles  , clienteId});
+    } catch (error) {
+        console.log(error);
+        res.json({ status: false, error }).status(400);
+    }
+  }
+  
 clientes.getAllClientes = async (req, res) => {
     try {
         const clientes = await pool.query("SELECT * FROM clientes");
@@ -31,9 +53,17 @@ clientes.insertNewCliente = async (req, res) => {
 }
 
 
-
-
-
+clientes.insertNewContact = async (req, res) => {
+    try {
+        const { Nombre, Tel, Email, Cargo, id_cliente } = req.body;
+        if (!Nombre || !id_cliente ) throw 'PARAMS_NOT_COMPLETE';
+        await pool.query("INSERT INTO contacto_cliente(Nombre, Tel, Email, Cargo, id_cliente) VALUES(?,?,?,?,?)", [Nombre, Tel, Email, Cargo , id_cliente]);
+        res.json({ status: true }).status(200);
+    } catch (error) {
+        console.log(error);
+        res.json({ status: false, error }).status(400);
+    }
+}
 
 clientes.editCliente = async (req, res) => {
     try {
@@ -51,7 +81,7 @@ clientes.editCliente = async (req, res) => {
 clientes.deleteCliente = async (req, res) => {
     try {
         const { id } = req.body;
-        if (!id) throw 'ID_NOT_EXIST';
+        if (!id)  throw 'ID_NOT_EXIST';
         await pool.query("DELETE FROM clientes WHERE id_cliente = ?", [id]);
         res.json({ status: true }).status(200);
     } catch (error) {
@@ -104,7 +134,6 @@ clientes.deleteContactById = async (req, res) => {
 clientes.getAllClientesTabla = async (req, res) => {
     try {
         const clientes = await pool.query("SELECT * FROM clientes");
-        console.log(clientes)
         res.render("index",{clientes})
     } catch (error) {
         console.log(error);

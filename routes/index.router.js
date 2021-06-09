@@ -8,6 +8,10 @@ const router = express.Router();
 router.get('/', index.main);
 
 
+/* GET home page. */
+router.post("/signin", index.signin);
+
+
 
 
 
