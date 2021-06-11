@@ -13,7 +13,7 @@ clientes.main = async (req ,res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-  }
+  };
 
 clientes.detalleCliente = async (req ,res) => {
     const {clienteId} = req.params;
@@ -28,7 +28,7 @@ clientes.detalleCliente = async (req ,res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-  }
+  };
   
 clientes.getAllClientes = async (req, res) => {
     try {
@@ -38,7 +38,7 @@ clientes.getAllClientes = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 clientes.insertNewCliente = async (req, res) => {
     try {
@@ -50,7 +50,7 @@ clientes.insertNewCliente = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 
 clientes.insertNewContact = async (req, res) => {
@@ -63,7 +63,7 @@ clientes.insertNewContact = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 clientes.editCliente = async (req, res) => {
     try {
@@ -76,7 +76,7 @@ clientes.editCliente = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 clientes.deleteCliente = async (req, res) => {
     try {
@@ -88,7 +88,7 @@ clientes.deleteCliente = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 
 clientes.getContactsById = async (req, res) => {
@@ -101,13 +101,13 @@ clientes.getContactsById = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 
 clientes.editContactById = async (req, res) => {
     try {
         const { Nombre, Tel, Email , Cargo , id } = req.body;
-        console.log(req.body)
+        console.log(req.body);
         if (!id) throw 'ID_NOT_EXIST';
         // if (!Nombre ||  !Tel || !Email || !Cargo) throw 'PARAMS_NOT_COMPLETE';
         await pool.query("UPDATE contacto_cliente SET Nombre = ? , Tel = ? , Email = ?, Cargo = ? WHERE id_contacto = ?  ", [Nombre, Tel, Email  , Cargo, id]);
@@ -116,7 +116,7 @@ clientes.editContactById = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 clientes.deleteContactById = async (req, res) => {
     try {
@@ -128,17 +128,17 @@ clientes.deleteContactById = async (req, res) => {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 
 clientes.getAllClientesTabla = async (req, res) => {
     try {
         const clientes = await pool.query("SELECT * FROM clientes");
-        res.render("index",{clientes})
+        res.render("index",{clientes});
     } catch (error) {
         console.log(error);
         res.json({ status: false, error }).status(400);
     }
-}
+};
 
 module.exports = clientes;

@@ -1,0 +1,124 @@
+<%- include('../layouts/header.ejs'); %>
+  <div id="layoutSidenav_content">
+    <main>
+      <header class="page-header page-header-dark bg-primary pb-10">
+        <div class="container-xl px-4">
+          <div class="page-header-content pt-4">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-auto mt-4">
+                <h1 class="page-header-title">
+                  <div class="page-header-icon">
+                    <i data-feather="archive"></i>
+                  </div>
+                  Materiales ingresados por proveedores
+                </h1>
+                <div class="page-header-subtitle">
+                  Visualiza todos los materiales que las empresas han registrado
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Main page content-->
+      <div class="container-xl px-4 mt-n10">
+        <div class="card card-header-actions mb-4">
+          <div class="card-header p-5">
+            Plantilla de materiales
+            <button class="btn btn-md btn-warning" type="button" data-toggle="modal" data-target="#modalCliente">
+              Agregar material
+            </button>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Precio</th>
+                  <th>Proveedor</th>
+                  <th>Material</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% materialesToTable.forEach(element=> { %>
+                  <tr>
+                    <td>
+                      $<%= element.Precio %>
+                    </td>
+                    <td>
+                      <%= element.proveedor %>
+                    </td>
+                    <td>
+                      <%= element.material %>
+                    </td>
+                    <td>
+                      <a class="btn btn-danger btnDeleteMaterialesProveedores" data-id="<%= element.id %>" >Eliminar</a>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal Agregar cliente -->
+
+    <div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo material por empresa</h5>
+            <button type="button" class="close btn btn-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="formMaterialesProveedores">
+              <div class="row">
+                  <div class="col-md-12">
+                    <label for="recipient-name" class="col-form-label">Seleccione proveedor del material</label>
+                    <select name="id_proveedor" required class="form-control" id="id_proveedor" >
+                        <option value="0" disabled selected>Seleccione Proveedor</option>
+                        <% proveedores.forEach(element=> { %>
+                            <option value="<%= element.id_proveedor %>"><%= element.Nombre %></option>
+                        <% }) %>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="recipient-name" class="col-form-label">Seleccione el modelo de material</label>
+                    <select name="id_material" required class="form-control" id="id_material">
+                        <option value="0" disabled selected>Seleccione material</option>
+                        <% materiales.forEach(element=> { %>
+                            <option value="<%= element.id_material %>"><%= element.Nombre %></option>
+                        <% }) %>
+                    </select>
+                  </div>
+                <div class="col-md-12">
+                    <label for="recipient-name" class="col-form-label">Precio del material ofrecido por la empresa</label>
+                    <div class="input-group input-group-joined">
+                        <span class="input-group-text">
+                            <i data-feather="dollar-sign"></i>
+                        </span>
+                        <input class="form-control ps-0" required name="Precio" id="Precio" type="text" placeholder="0.00" aria-label="Search">
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+        </form>
+
+        </div>
+      </div>
+    </div>
+
+    <%- include('../layouts/footer.ejs'); %>
+    <script src="/static/js/mask.min.js"></script>
+  <script src="/static/js/materiales.js"></script>

@@ -3,3 +3,5 @@ Faltante :
 - Modal de editar detalle en contactos de clientes y proveedores
 - Validar formularios de ingreso de contactos y de clientes  y proveedores
 - Poner diseño o icono a los botones de las tablas
+- Arreglar el .ico
+- Colocar mascara en precio de producto por empresa
