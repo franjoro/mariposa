@@ -8,6 +8,8 @@ const indexRouter = require('./routes/index.router');
 const clientesRouter = require('./routes/clientes.router');
 const proveedoresRouter = require('./routes/proveedor.router');
 const materialesRouter = require('./routes/materiales.router');
+const cotizacionesRouter = require('./routes/cotizaciones.router');
+
 
 
 
@@ -29,6 +31,8 @@ app.use('/', indexRouter);
 app.use('/clientes', clientesRouter);
 app.use('/proveedores', proveedoresRouter);
 app.use('/materiales', materialesRouter);
+app.use('/cotizaciones', cotizacionesRouter);
+
 
 
 
