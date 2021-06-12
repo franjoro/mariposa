@@ -10,10 +10,10 @@
                   <div class="page-header-icon">
                     <i data-feather="archive"></i>
                   </div>
-                  Cotizaciones
+                  Cotización hecha a cliente : Franklin López
                 </h1>
                 <div class="page-header-subtitle">
-                  Visualiza todos las cotizaciones de tus clientes
+                  Visualiza la información de los productos de la cotización
                 </div>
               </div>
             </div>
@@ -24,45 +24,53 @@
       <div class="container-xl px-4 mt-n10">
         <div class="card card-header-actions mb-4">
           <div class="card-header p-5">
-            Cotizaciones
+            <a href="/cotizaciones" class="btn btn-md btn-primary"><i class="fas fa-arrow-left"></i></a>
             <button class="btn btn-md btn-warning" type="button" data-toggle="modal" data-target="#modalCliente">
-              Agregar Cotización
+              Agregar Producto
             </button>
           </div>
           <div class="card-body">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Cliente</th>
-                  <th>Fecha de creación</th>
-                  <th>Fecha Valida</th>
-                  <th>Total</th>
-                  <th>Opciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% cotizaciones.forEach(element=> { %>
-                  <tr>
-                    <td>
-                      <%= element.cliente %>
-                    </td>
-                    <td>
-                      <%= element.Fecha %>
-                    </td>
-                    <td>
-                      <%= element.FechaValida %>
-                    </td>
-                    <td>$ 
-                      <%= element.Total %>
-                    </td>
-                    <td>
-                      <a href="/cotizaciones/detalles/<%=element.id%>" class="btn btn-primary">Ver detalles</a>
-                      <a class="btn btn-danger btnDeleteCotizaciones" data-id="<%= element.id %>" >Eliminar</a>
-                    </td>
-                  </tr>
-                  <% }) %>
-              </tbody>
-            </table>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-header-actions mb-4">
+                  <div class="card-body">
+                    <h3>Nombre producto</h3>
+                    <p><span class="font-weight-bold">Costo: </span>$41.50 | Valor de venta : $50.00 </p>
+                    <hr>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi repudiandae consequuntur, asperiores voluptate doloremque eaque eum modi vero reiciendis id iure molestias ex adipisci? A pariatur dolores excepturi aliquam molestias.</p>
+                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card card-header-actions mb-4">
+                  <div class="card-header p-5">
+                    Materiales a utilizar
+                    <button class="btn btn-md btn-success" type="button" data-toggle="modal" data-target="#modalCliente">
+                      Agregar material
+                    </button>
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <td>Nombre</td>
+                            <td>Cantidad</td>
+                            <td>Costo</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Producto A</td>
+                            <td>2</td>
+                            <td>$41.50</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,9 +95,6 @@
                   <label for="recipient-name" class="col-form-label">Seleccione cliente que desea la cotización</label>
                   <select name="id_cliente" required class="form-control" id="id_cliente" >
                       <option value="0" disabled selected>Seleccione Cliente</option>
-                      <% clientes.forEach(element=> { %>
-                          <option value="<%= element.id_cliente %>"><%= element.Nombre %></option>
-                      <% }) %>
                   </select>
                 </div>
                 <div class="col-md-12">

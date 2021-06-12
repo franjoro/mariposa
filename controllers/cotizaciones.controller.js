@@ -20,6 +20,26 @@ cotizaciones.main = async (req, res) => {
   }
 };
 
+cotizaciones.detalles = async (req, res) => {
+  const {id} = req.params;
+  console.log(id);
+  try {
+    let cotizaciones = pool.query(
+      "SELECT ordenes.id_orden AS id , clientes.Nombre  AS cliente , ordenes.Fecha, ordenes.Total , ordenes.FechaValida FROM ordenes INNER JOIN clientes ON clientes.id_cliente = ordenes.id_cliente WHERE Estado = 1"
+    );
+    let datosOrden = pool.query("SELECT clientes.Nombre AS cliente, ordenes.FechaValida AS fecha FROM ordenes INNER JOIN clientes ON clientes.id_cliente = ordenes.id_cliente WHERE ordenes.id_orden = ?", id);
+    const query = await Promise.all([cotizaciones, datosOrden]);
+
+    cotizaciones = query[0];
+    datosOrden = query[1];
+
+    res.render("./cotizaciones/detalles", { cotizaciones , datosOrden});
+  } catch (error) {
+    console.log(error);
+    res.json({ status: false, error }).status(400);
+  }
+};
+
 cotizaciones.insertNewCotizacion = async (req, res) => {
   try {
     const { id_cliente,  FormaPago, FechaValida } = req.body;
