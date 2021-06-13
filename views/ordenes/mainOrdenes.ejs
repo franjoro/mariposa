@@ -10,10 +10,10 @@
                   <div class="page-header-icon">
                     <i data-feather="archive"></i>
                   </div>
-                  Cotizaciones
+                  Ordenes
                 </h1>
                 <div class="page-header-subtitle">
-                  Visualiza todos las cotizaciones de tus clientes
+                  Visualiza todas las ordenes de tus clientes
                 </div>
               </div>
             </div>
@@ -25,9 +25,6 @@
         <div class="card card-header-actions mb-4">
           <div class="card-header p-5">
             Cotizaciones
-            <button class="btn btn-md btn-warning" type="button" data-toggle="modal" data-target="#modalCliente">
-              Agregar Cotización
-            </button>
           </div>
           <div class="card-body">
             <table class="table table-striped">
@@ -52,10 +49,8 @@
                       <%= element.FechaValida %>
                     </td>
                     <td>
-                      <a href="/cotizaciones/detalles/<%=element.id%>" class="btn btn-primary">Ver detalles</a>
+                      <a href="/cotizaciones/ordenes/detalles/<%=element.id%>" class="btn btn-primary">Ver detalles</a>
                       <a class="btn btn-danger btnDeleteCotizaciones" data-id="<%= element.id %>" >Eliminar</a>
-                      <a class="btn btn-success btnAceptarCotizacion" data-id="<%= element.id %>" >Aceptar cotización</a>
-
                     </td>
                   </tr>
                   <% }) %>

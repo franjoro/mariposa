@@ -24,8 +24,7 @@ const loader = () => {
      const data = await $.ajax({ url: "/signin", type: "POST", data: t });
      if(data.status){
          // CAMBIAR RUTAS
-         if(data.role  === 0) window.location.replace('/admin/cursos');
-         if(data.role  === 1) window.location.replace('/admin/');
+         window.location.replace('/home');
          swal.close();
      }
    } catch (error) {

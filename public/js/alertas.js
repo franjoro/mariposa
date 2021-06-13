@@ -18,8 +18,6 @@ const newErrorMessage = (data = "") => {
     });
   };
 
-// @params {String} Titulo de la alerta
-// @params {String} Texto descriptivo
   const deleteConfirmAlert =  (title, text)=>{
    return Swal.fire({
       title , text,
@@ -29,4 +27,15 @@ const newErrorMessage = (data = "") => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Si, borrar",
     });
-  } 
+  } ;
+
+  const ConfirmAlert =  (title, text)=>{
+    return Swal.fire({
+       title , text,
+       icon: "info",
+       showCancelButton: true,
+       confirmButtonColor: "#3085d6",
+       cancelButtonColor: "#d33",
+       confirmButtonText: "Si, aceptar",
+     });
+   } ;

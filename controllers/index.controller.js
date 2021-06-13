@@ -6,6 +6,10 @@ index.main = (req ,res) => {
   res.render('index', { title: 'Express' });
 }
 
+index.mainHome = (req ,res) => {
+  res.render('home');
+}
+
 // Login handler
 index.signin = async (req, res) => {
  const {username , password} = req.body;

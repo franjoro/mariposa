@@ -1,0 +1,143 @@
+<%- include('./layouts/header.ejs'); %>
+
+<div id="layoutSidenav_content">
+  <main>
+    <header
+      class="
+        page-header page-header-dark
+        bg-gradient-primary-to-secondary
+        pb-10
+      "
+    >
+      <div class="container-xl px-4">
+        <div class="page-header-content pt-4">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-auto mt-4">
+              <h1 class="page-header-title">
+                <div class="page-header-icon">
+                  <i data-feather="bookmark"></i>
+                </div>
+                Dashboard
+              </h1>
+              <div class="page-header-subtitle">
+                Accede de forma fácil a tus opciones más importantes
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main page content-->
+    <div class="container-xl px-4 mt-n10">
+      <div class="row">
+        <div class="col-xxl-4 col-xl-12 mb-4">
+          <div class="card h-100">
+            <div class="card-body h-100 p-5">
+              <div class="row align-items-center">
+                <div class="col-xl-8 col-xxl-12">
+                  <div
+                    class="
+                      text-center text-xl-start text-xxl-center
+                      mb-4 mb-xl-0 mb-xxl-4
+                    "
+                  >
+                    <h1 class="text-primary">
+                      Bienvenida al Administrados de Mariposa de Añil
+                    </h1>
+                    <p class="text-gray-700 mb-0">
+                      Admistra el directorio de Clientes y proveedores, además
+                      lleva un control de todo el proceso y detalle de tus
+                      ordenes
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-xxl-12 text-center">
+                  <img
+                    class="img-fluid"
+                    src="/static/assets/img/illustrations/at-work.svg"
+                    style="max-width: 26rem"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 mb-4">
+          <!-- Dashboard example card 1-->
+          <a class="card lift h-100" href="#!">
+            <div class="card-body d-flex justify-content-center flex-column">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="me-3">
+                  <i
+                    class="feather-xl text-primary mb-3"
+                    data-feather="users"
+                  ></i>
+                  <h5>Directorio de Clientes</h5>
+                  <div class="text-muted small">
+                    Visualiza tu cartera de clientes
+                  </div>
+                </div>
+                <img
+                  src="/static/assets/img/illustrations/1.svg"
+                  alt="..."
+                  style="width: 8rem"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <!-- Dashboard example card 2-->
+          <a class="card lift h-100" href="#!">
+            <div class="card-body d-flex justify-content-center flex-column">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="me-3">
+                  <i
+                    class="feather-xl text-warning mb-3"
+                    data-feather="package"
+                  ></i>
+                  <h5>Directorio de proveedores</h5>
+                  <div class="text-muted small">
+                    Visualiza a tus proveedores y sus materiales
+                  </div>
+                </div>
+                <img
+                  src="/static/assets/img/illustrations/2.svg"
+                  alt="..."
+                  style="width: 8rem"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <!-- Dashboard example card 3-->
+          <a class="card lift h-100" href="#!">
+            <div class="card-body d-flex justify-content-center flex-column">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="me-3">
+                  <i
+                    class="feather-xl text-teal mb-3"
+                    data-feather="clipboard"
+                  ></i>
+                  <h5>Ordenes registradas</h5>
+                  <div class="text-muted small">
+                    Visualiza tus ordenes y su detalle
+                  </div>
+                </div>
+                <img
+                  src="/static/assets/img/illustrations/3.svg"
+                  alt="..."
+                  style="width: 8rem"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%- include('./layouts/footer.ejs'); %>
+</div>
